@@ -1,7 +1,7 @@
 //GRIFFIN CHANGED THIS!!!!!!!1
 package org.usfirst.frc.team2083.robot;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -16,16 +16,14 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 	RobotDrive myRobot;
 	Joystick stick;
-	Jaguar myjRobot;
 	int autoLoopCounter;
-	
+
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
     	myRobot = new RobotDrive(0,1);
-    	myjRobot = new Jaguar (0);
     	stick = new Joystick(0);
     }
     
@@ -41,32 +39,22 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    	if(autoLoopCounter < 1000) //Check if we've completed 100 loops (approximately 2 seconds)
+
+    	if(autoLoopCounter < 1000) //Check if we've completed 1000 loops (approximately 2 seconds)
 		{
-			//myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
-    		switch (autoLoopCounter)
-    		{
-    		
-    		case 1: myjRobot.set(-.4);
-    		break;
-    		case 200: myjRobot.set(-.2);
-    		break;
-    		case 400: myjRobot.set(0);
-    		break;
-    		case 600: myjRobot.set(.2);
-    		break;
-    		case 800: myjRobot.set(.4);
-    		break;
-    		case 900: myjRobot.set(.7);
-    		break;
-    		case 999: myjRobot.stopMotor();
-    		break;
-    		
-    		default:
-    			break;
-    		}
+			autoLoopCounter++;
+ 
+			if(autoLoopCounter > 1 && autoLoopCounter < 200){myRobot.drive(-0.4,0);}
+			if(autoLoopCounter > 200 && autoLoopCounter < 400){myRobot.drive(-0.2,0);}
+			if(autoLoopCounter > 400 && autoLoopCounter < 600){myRobot.drive(0,0);}
+			if(autoLoopCounter > 600 && autoLoopCounter < 800){myRobot.drive(0.2,0);}
+			if(autoLoopCounter > 800 && autoLoopCounter < 900){myRobot.drive(0.4,0);}
+			if(autoLoopCounter > 900 && autoLoopCounter < 999){myRobot.drive(0,0);}
+
+
 		}
     }
+    
     /**
      * This function is called once each time the robot enters tele-operated mode
      */
