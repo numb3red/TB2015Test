@@ -43,11 +43,11 @@ public class Robot extends IterativeRobot {
 		{
 			autoLoopCounter++;
  
-			if(autoLoopCounter > 1 && autoLoopCounter < 200){myRobot.drive(-0.4,0);}
-			if(autoLoopCounter > 200 && autoLoopCounter < 400){myRobot.drive(-0.2,0);}
+			if(autoLoopCounter > 1 && autoLoopCounter < 200){myRobot.drive(-0.8,0);}
+			if(autoLoopCounter > 200 && autoLoopCounter < 400){myRobot.drive(-0.4,0);}
 			if(autoLoopCounter > 400 && autoLoopCounter < 600){myRobot.drive(0,0);}
-			if(autoLoopCounter > 600 && autoLoopCounter < 800){myRobot.drive(0.2,0);}
-			if(autoLoopCounter > 800 && autoLoopCounter < 900){myRobot.drive(0.4,0);}
+			if(autoLoopCounter > 600 && autoLoopCounter < 800){myRobot.drive(0.4,0);}
+			if(autoLoopCounter > 800 && autoLoopCounter < 900){myRobot.drive(0.8,0);}
 			if(autoLoopCounter > 900 && autoLoopCounter < 999){myRobot.drive(0,0);}
 
 
